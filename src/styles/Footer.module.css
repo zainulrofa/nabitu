@@ -1,0 +1,107 @@
+.background {
+    position: relative;
+    background-color: #195A32;
+}
+
+.left-leave {
+    position: absolute;
+    top: 3rem;
+    left: -2rem;
+}
+
+.right-leave {
+    position: absolute;
+    right: -1rem;
+    bottom: .5rem;
+}
+
+.container-top {
+    padding-top: 3rem;
+}
+
+.container-bottom {
+    padding-bottom: 3rem;
+}
+
+.title {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.content {
+    padding-right: 2rem;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.logo-sosmed {
+    padding-left: 2rem;
+}
+
+.logo-sosmed i {
+    color: white;
+    font-size: 28px;
+}
+
+.logo-sosmed i:hover {
+    cursor: pointer;
+}
+
+.fb:hover {
+    color: #3b5998;
+}
+
+.ig:hover {
+    color: #8134af;
+}
+
+.linkedin:hover {
+    color: #0077b5;
+}
+
+.tiktok:hover {
+    color: black;
+}
+
+.top {
+    display: flex;
+    gap: 1rem;
+}
+
+.bottom {
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+.info ol, .about ol, .contact ol {
+    padding: 0;
+}
+
+.info ol li, .about ol li, .contact ol li {
+    list-style: none;
+    color: white;
+}
+
+.info ol li:hover, .about ol li:hover {
+    cursor: pointer;
+    color: #F5A856;
+    user-select: none;
+}
+
+.register img{
+    width: 219px;
+}
+
+.sponsor img {
+    width: 75px;
+    margin: 1rem 2.5rem 0;
+}
+
+.afsi {
+    padding-top: 1rem;
+}
+
