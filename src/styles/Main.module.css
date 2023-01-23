@@ -221,3 +221,33 @@
     margin: 0;
     color: white;
 }
+
+.to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: black;
+    font-size: 2rem;
+    z-index: 100;
+    /* display: none; */
+}
+
+.to-top:hover {
+    cursor: pointer;
+}
+
+.to-top.show {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: black;
+    font-size: 2rem;
+    z-index: 100;
+    animation: slideIn 0.5s ease-out;
+}
+
+.to-top.hide {
+    animation: slideOut 0.5s ease-out;
+    opacity: 0;
+    display: none;
+}

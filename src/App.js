@@ -11,8 +11,11 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import Select from "react-select";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [isVisible, setIsVisible] = useState(false);
+
   const data = [
     {
       image: store1,
@@ -102,19 +105,44 @@ function App() {
   };
 
   const status = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
+    { value: "Selesai", label: "Selesai" },
+    { value: "Berjalan", label: "Berjalan" },
+    { value: "Belum Mulai", label: "Belum Mulai" },
   ];
 
   const type = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
+    { value: "Kontruksi", label: "Kontruksi" },
+    { value: "Jasa", label: "Jasa" },
+    { value: "Jual Beli", label: "Jual Beli" },
   ];
-  // console.log(data[0].image);
+  console.log(isVisible);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 100) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <div className="App">
+      <i
+        className={`fa-solid fa-circle-chevron-up ${style["to-top"]} ${
+          isVisible ? "show" : "hide"
+        }`}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      ></i>
+      {/* <button
+        className={`${style["to-top"]} ${isVisible ? "show" : "hide"}`}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        top
+      </button> */}
       <Header />
       <main>
         <div className={style["title-content"]}>
