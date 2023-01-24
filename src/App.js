@@ -6,6 +6,8 @@ import store3 from "./assets/store-3.png";
 import store4 from "./assets/store-4.png";
 import store5 from "./assets/store-5.png";
 import store6 from "./assets/store-6.png";
+import graph from "./assets/graph.png";
+import logo from "./assets/logo-white.png";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -15,6 +17,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
+  const [seconds, setSeconds] = useState(3600);
 
   const data = [
     {
@@ -24,7 +27,7 @@ function App() {
       name: "Ammar Kids",
       target: 298000000,
       saldo: 144000000,
-      period: "Dec 2021 - May 2022",
+      period: "Dec 2022 - May 2023",
       duration: 4.9,
       projection: "ROI 10.00%",
     },
@@ -35,7 +38,7 @@ function App() {
       name: "Ammar Kids",
       target: 298000000,
       saldo: 144000000,
-      period: "Dec 2021 - May 2022",
+      period: "Dec 2022 - May 2023",
       duration: 4.9,
       projection: "ROI 10.00%",
     },
@@ -46,7 +49,7 @@ function App() {
       name: "Ammar Kids",
       target: 298000000,
       saldo: 144000000,
-      period: "Dec 2021 - May 2022",
+      period: "Dec 2022 - May 2023",
       duration: 4.9,
       projection: "ROI 10.00%",
     },
@@ -57,7 +60,7 @@ function App() {
       name: "Ammar Kids",
       target: 298000000,
       saldo: 144000000,
-      period: "Dec 2021 - May 2022",
+      period: "Dec 2022 - May 2023",
       duration: 4.9,
       projection: "ROI 10.00%",
     },
@@ -68,7 +71,7 @@ function App() {
       name: "Ammar Kids",
       target: 298000000,
       saldo: 0,
-      period: "Dec 2021 - May 2022",
+      period: "Jan 2023 - May 2024",
       duration: 4.9,
       projection: "ROI 10.00%",
     },
@@ -125,10 +128,21 @@ function App() {
         setIsVisible(false);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (seconds > 0) {
+      const intervalId = setInterval(() => setSeconds(seconds - 1), 1000);
+      return () => clearInterval(intervalId);
+    }
+  }, [seconds]);
+
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const secs = seconds % 60;
+
   return (
     <div className="App">
       <i
@@ -202,6 +216,37 @@ function App() {
               <div className={style["card"]}>
                 <div className={style["image-wrapper"]}>
                   <img src={e.image} alt="img-store" />
+                  {e.percent === 100 ? (
+                    <div className={style["done-container"]}>
+                      <div className={style["done"]}>
+                        <div className={style["logo-wrapper"]}>
+                          <img src={logo} alt="" />
+                        </div>
+                        <h1>Alhamdulillah Selesai</h1>
+                      </div>
+                    </div>
+                  ) : (
+                    e.percent > 0 && (
+                      <div className={style["going-container"]}>
+                        <div className={style["done"]}>
+                          <div className={style["logo-wrapper"]}>
+                            <img src={logo} alt="" />
+                          </div>
+                          <h1>Berjalan</h1>
+                        </div>
+                      </div>
+                    )
+                  )}
+                  {e.percent === 0 && (
+                    <div className={style["time-container"]}>
+                      <div className={style["time"]}>
+                        <h2 className={style["title"]}>Akan Dimulai</h2>
+                        <h1 className={style["countdown"]}>
+                          {hours} : {minutes} : {secs}
+                        </h1>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <div className={style["syirkah"]}>
                   <p>{e.syirkah}</p>
@@ -213,6 +258,17 @@ function App() {
                 <div className={style["name"]}>{e.name}</div>
                 <div className={style["slider"]}>
                   <div className={style["wrapper"]}>
+                    <h1
+                      style={{
+                        position: "absolute",
+                        color: "white",
+                        zIndex: "10",
+                        fontSize: "12px",
+                        left: "7.8rem",
+                      }}
+                    >
+                      {e.percent === 100 && `${e.percent}%`}
+                    </h1>
                     <div
                       style={{
                         width: `${e.percent}%`,
@@ -267,6 +323,28 @@ function App() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+        <div className={`container-fluid ${style["shadow"]}`}>
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-7">
+                <div className={style["left"]}>
+                  <div className={style["top"]}>
+                    <h1>
+                      Jadi Member Dan Dapatkan Peluang Investasi Tanpa Riba
+                    </h1>
+                  </div>
+                  <div className={style["bottom"]}>
+                    <h2>#TumbuhTanpaRiba</h2>
+                    <button>Ayo Mulai</button>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 offset-lg-1">
+                <img src={graph} alt="" />
+              </div>
+            </div>
           </div>
         </div>
       </main>
