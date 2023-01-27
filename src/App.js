@@ -165,7 +165,7 @@ function App() {
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-lg-6 col-12">
               <div className={style["dropdown"]}>
                 <Select
                   className={style["select"]}
@@ -197,7 +197,7 @@ function App() {
                 />
               </div>
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-6 col-12">
               <div className={style["navbar"]}>
                 <div className={style["sort-container"]}>
                   <i className="fa-solid fa-arrow-up-wide-short"></i>
@@ -328,7 +328,7 @@ function App() {
         <div className={`container-fluid ${style["shadow"]}`}>
           <div className="container">
             <div className="row">
-              <div className="col-lg-7">
+              <div className="col-lg-7 col-12">
                 <div className={style["left"]}>
                   <div className={style["top"]}>
                     <h1>
@@ -341,7 +341,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-4 offset-lg-1">
+              <div className="col-lg-4 offset-lg-1 col-12 text-center my-2">
                 <img src={graph} alt="" />
               </div>
             </div>

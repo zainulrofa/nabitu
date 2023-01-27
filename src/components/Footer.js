@@ -15,7 +15,7 @@ function Footer() {
       <img className={style["right-leave"]} src={rightLeave} alt="" />
       <div className="container">
         <div className={`row  ${style["container-top"]}`}>
-          <div className="col-4">
+          <div className="col-lg-4 col-6">
             <div className={style["address"]}>
               <h1 className={style["title"]}>PT. Nabitu Teknologi Islami</h1>
               <p className={style["content"]}>
@@ -24,7 +24,7 @@ function Footer() {
               </p>
             </div>
           </div>
-          <div className="col-3">
+          <div className="col-lg-3 col-6">
             <div className={style["info"]}>
               <h1 className={style["title"]}>Informasi Pelayanan</h1>
               <ol>
@@ -36,7 +36,7 @@ function Footer() {
               </ol>
             </div>
           </div>
-          <div className="col-3">
+          <div className="col-lg-3 col-6">
             <div className={style["about"]}>
               <h1 className={style["title"]}>Tentang Kami</h1>
               <ol>
@@ -48,7 +48,7 @@ function Footer() {
               </ol>
             </div>
           </div>
-          <div className="col-2">
+          <div className="col-lg-2 col-6">
             <div className={style["contact"]}>
               <h1 className={style["title"]}>Kontak</h1>
               <ol>
@@ -59,7 +59,7 @@ function Footer() {
           </div>
         </div>
         <div className={`row  ${style["container-bottom"]}`}>
-          <div className="col-4">
+          <div className="col-lg-4 col-6">
             <div className={style["sosmed"]}>
               <h1 className={style["title"]}>Sosial Media</h1>
               <div className={style["logo-sosmed"]}>
@@ -88,20 +88,20 @@ function Footer() {
               </div>
             </div>
           </div>
-          <div className="col-3">
+          <div className="col-lg-3 col-6">
             <div className={style["ongoing"]}>
               <h1 className={style["title"]}>Dalam Proses</h1>
               <img src={ojk} alt="ojk" />
             </div>
           </div>
-          <div className="col-3">
+          <div className="col-lg-3 col-6">
             <div className={style["register"]}>
               <h1 className={style["title"]}>Terdaftar di:</h1>
               <img src={kominfo} alt="kominfo" />
               <img className={style["afsi"]} src={afsi} alt="afsi" />
             </div>
           </div>
-          <div className="col-2">
+          <div className="col-lg-2 col-6">
             <div className={style["sponsor"]}>
               <h1 className={style["title"]}>Didukung Oleh:</h1>
               <img src={privy} alt="kominfo" />
